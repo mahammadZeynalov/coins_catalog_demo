@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    margin: 0 auto;
+}
+
+.image {
+    width: 200px;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    margin-bottom: 20px;
+}
+
+.text {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 125%;
+}
+
+.back {
+    font-size: 10px;
+    line-height: 12px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.image_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.info_section {
+    background: rgba(196, 196, 196);
+    width: 450px;
+    padding: 30px;
+    position: relative;
+}
+
+.table {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 105.2%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.table tr td {
+    padding: 5px;
+    border: 1px solid grey;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+

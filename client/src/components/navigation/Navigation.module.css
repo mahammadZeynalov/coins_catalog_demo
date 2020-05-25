@@ -1,0 +1,55 @@
+.container {
+    padding: 10px 0;
+}
+
+.header {
+    font-size: 35px;
+}
+
+.wrapper {
+    width: 100%;
+    background-color: rgb(247,249,250);
+}
+
+.link {
+    font-size: 18px;
+    margin-right: 10px;
+    padding: 8px;
+    color: black
+}
+
+.link:hover {
+    background-color: rgb(131,59,224);
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    background-color: rgb(131,59,224);
+    border-radius: 5px;
+    color: white;
+}
+
+.active:hover {
+    color: white;
+    text-decoration-line: none;
+}
+
+.user_name {
+    position: absolute;
+    width: 100px;
+    right: 20px;
+    top: 90px;
+}
+
+.logo_img {
+    width: 60px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .logo_img {
+        display: none;
+    }
+}

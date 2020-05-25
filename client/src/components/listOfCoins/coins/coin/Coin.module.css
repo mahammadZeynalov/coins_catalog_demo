@@ -1,0 +1,45 @@
+.image_coin {
+    width: 120px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 340px;
+    height: 180px;
+}
+
+.navlink {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #833AE0;
+}
+
+.text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 125.5%;
+    padding-top: 8px;
+}
+
+.info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.btn_group {
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,13 @@
+.addCoin {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.addCoin:hover {
+  text-decoration: underline;
+}
+
+.margin > div {
+  margin-top: 20px;
+}

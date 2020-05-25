@@ -1,0 +1,236 @@
+/* GENERAL STYLES */
+
+.pagination {
+  margin: 0 auto;
+  padding: 30px 0;
+  width: 80%;
+  text-align: center;
+  min-width: 220px
+}
+
+.pagination ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  width: 400px;
+}
+
+.pagination a {
+  cursor: pointer;
+
+  display: inline-block;
+  padding: 10px 18px;
+  color: #222;
+}
+
+/* ONE */
+
+.p1 a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  text-align: center;
+}
+
+.p1 a.is-active {
+  background-color: #833AE0;
+  border-radius: 100%;
+  color: #fff;
+}
+
+/* TWO */
+
+.bottom-border .is-active li {
+  font-weight: bold;
+  border-bottom: 3px solid #2ecc71;
+}
+
+/* THREE */
+
+.p3 .is-active {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+/* FOUR */
+
+.p4 a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 100%;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  border: 3px solid #2ecc71;
+}
+
+.p4 .is-active:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #2ecc71;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+/* FIVE */
+
+.p5 a {
+  width: 30px;
+  height: 5px;
+  padding: 0;
+  margin: auto 5px;
+  background-color: rgba(46, 204, 113, 0.4);
+}
+
+.p5 .is-active {
+  background-color: #2ecc71;
+}
+
+/* SIX */
+
+.p6 a {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  padding: 0;
+  margin: auto 5px;
+  text-align: center;
+  position: relative;
+  background-color: rgba(46, 204, 113, 0.4);
+}
+
+.p6 .is-active {
+  background-color: #2ecc71;
+}
+
+/* SEVEN */
+
+.square-i a {
+  border: 3px solid #2ecc71;
+  margin: auto 5px;
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.square-i .is-active {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+/* EIGHT */
+
+/* default */
+
+.default a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: auto 5px;
+}
+
+.default .is-active {
+  background-color: #833AE0;
+  color: white;
+  border: 1px solid #833AE0;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+/* default */
+
+.p8 a {
+  background-color: #2ecc71;
+  margin: auto 5px;
+  color: #fff;
+  font-weight: bold;
+  border: 3px solid #2ecc71;
+}
+
+.p8 .is-active {
+  background-color: #fff;
+  color: #2ecc71;
+}
+
+/* NINE */
+
+.circle a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  text-align: center;
+  margin: auto 5px;
+}
+
+.circle a.is-active {
+  border: 3px solid #2ecc71;
+  border-radius: 100%;
+}
+
+/* TEN */
+
+.square a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  text-align: center;
+  margin: auto 5px;
+}
+
+.square a.is-active {
+  border: 3px solid #2ecc71;
+}
+
+/* ELEVEN */
+
+.p11 a {
+  background-color: #2ecc71;
+  margin: auto 5px;
+  color: #fff;
+  border: 3px solid #2ecc71;
+  position: relative;
+}
+
+.p11 a:first-of-type:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -25px;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-right: 22px solid #2ecc71;
+}
+
+.p11 a:last-of-type:after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -25px;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 22px solid #2ecc71;
+}
+
+.p11 .is-active {
+  font-weight: bold;
+}
+
+/* TWELVE */
+
+.square-fill a:first-of-type,
+.square-fill a:last-of-type,
+.square-fill .is-active {
+  background-color: #2ecc71;
+  color: #fff;
+  font-weight: bold;
+}

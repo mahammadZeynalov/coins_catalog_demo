@@ -1,0 +1,14 @@
+.select {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.select label {
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+
+.margin > div {
+    margin-top: 20px;
+}

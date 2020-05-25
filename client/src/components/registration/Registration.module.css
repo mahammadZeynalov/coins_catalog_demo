@@ -1,0 +1,48 @@
+.form {
+    width: 20%;
+    margin: 50px auto;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 109%;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+}
+
+.submit input {
+    background: #833AE0;
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.form > input {
+    margin-top: 10px;
+}
+
+.form > h1 {
+    margin-bottom: 20px;
+}
+
+.form > div {
+    margin-bottom: 20px;
+}
+
+.error {
+    margin-top: 5px;
+    color: red;
+}
+
+
+

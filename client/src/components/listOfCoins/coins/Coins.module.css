@@ -1,0 +1,8 @@
+.alert {
+    margin-top: 30px;
+}
+
+.coins {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 370px));
+}

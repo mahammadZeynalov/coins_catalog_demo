@@ -1,0 +1,16 @@
+.image_coin {
+    width: 200px;
+}
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    color: black;
+    text-decoration-line: underline;
+}
+
+.margin > div {
+    margin-top: 20px;
+}

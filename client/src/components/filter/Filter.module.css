@@ -1,0 +1,79 @@
+.container {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+
+.block {
+    position: absolute;
+    background-color: aliceblue;
+    z-index: 999;
+    width: 45%;
+    min-width: 700px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8)
+}
+
+.label {
+    padding-right: 5px;
+    font-weight: 550;
+    padding-top: 10px;
+}
+
+.input {
+    height: 24.4px;
+    margin-right: 5px;
+}
+
+.country {
+    display: flex;
+    flex-direction: column;
+}
+
+.country select {
+    width: 261px;
+}
+
+.metal {
+    display: flex;
+    flex-direction: column;
+}
+
+.metal select {
+    width: 261px;
+}
+
+
+.quality {
+    display: flex;
+    flex-direction: column;
+}
+
+.quality select {
+    width: 261px;
+}
+
+.number {
+    display: flex;
+}
+
+.number_parent {
+    display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .label {
+      padding-top: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .input {
+      width: 128px;
+    }
+
+    .container {
+        
+    }
+  }
