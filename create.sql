@@ -1,4 +1,3 @@
-CREATE DATABASE coins_collection;
 use coins_collection;
 -- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
