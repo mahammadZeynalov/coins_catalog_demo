@@ -21,7 +21,7 @@ class Navigation extends Component {
                 <div className='container'>
                     <Navbar bg="light" expand="lg" className={styles.container}>
                         <Navbar.Brand className={header}>
-                            <img className = {logo_img} src = {logo} alt = 'logo' />
+                            <img className={logo_img} src={logo} alt='logo' />
                             Coins Catalog
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,6 +34,9 @@ class Navigation extends Component {
                                 }
                                 {
                                     this.props.user.isAdmin === 0 ? <NavLink activeClassName={active} className={link} exact to='/cart'>Cart</NavLink> : null
+                                }
+                                {
+                                    this.props.user.email ? <NavLink className={link} exact to='/posts' onClick={this.logout}>Posts</NavLink> : null
                                 }
                             </Nav>
                             <Nav>

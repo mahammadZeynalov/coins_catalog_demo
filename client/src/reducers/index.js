@@ -158,6 +158,24 @@ const modalCreateEdit = (state = false, action) => {
     }
 }
 
+const buyOrSell = (state = 'buy', action) => {
+    switch(action.type) {
+        case 'CHANGE_BUY_OR_SELL':
+            return action.payload
+        default:
+            return state
+    }
+}
+
+const selectOnPagePosts = (state = 3, action) => {
+    switch(action.type) {
+        case 'CHANGE_POSTS_ON_PAGE':
+            return action.payload
+        default:
+            return state
+    }
+}
+
 export default combineReducers({
     coin,
     coins,
@@ -171,5 +189,7 @@ export default combineReducers({
     currentPage,
     searchParams,
     createdCoin,
-    modalCreateEdit
+    modalCreateEdit,
+    buyOrSell,
+    selectOnPagePosts
 });

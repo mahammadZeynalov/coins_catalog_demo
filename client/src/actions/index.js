@@ -329,3 +329,17 @@ export const closeModalCreateEdit = () => {
         type: 'CLOSE_MODAL'
     }
 }
+
+export const changeBuySelect = (value) => {
+    return {
+        type: 'CHANGE_BUY_OR_SELL',
+        payload: value
+    }
+}
+
+export const changeOnPagePosts = (value) => {
+    return {
+        type: 'CHANGE_POSTS_ON_PAGE',
+        payload: value
+    }
+}

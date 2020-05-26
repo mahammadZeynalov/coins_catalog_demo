@@ -22,36 +22,50 @@ class LogIn extends Component {
   }
 
   render() {
-    const { form, submit } = styles
+    const { form, submit, margin } = styles
     return (
       <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
-        <form onSubmit={this.handleSubmit} className={form}>
-          <h1>Login</h1>
-
-          <label>Email</label>
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text" id="basic-addon1">@</span>
+        <form onSubmit={this.handleSubmit} className={form + ' container'}>
+          <div className={margin + ' row justify-content-center'}>
+            <div className='col-md-3'>
+              <h1>Login</h1>
             </div>
-            <input name='email'
-              type="text"
-              value={this.state.email}
-              onChange={this.handleChange}
-              className="form-control"
-              aria-label="Username"
-              aria-describedby="basic-addon1" />
-          </div><br />
-
-          <label>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={this.state.password}
-            onChange={this.handleChange}
-            className="form-control"
-          /><br />
-          <div className={submit}>
-            <input type='submit' />
+          </div>
+          <div className={margin + ' row justify-content-center'}>
+            <div className='col-md-3 '>
+              <label>Email</label>
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input name='email'
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1" />
+              </div>
+            </div>
+          </div>
+          <div className={margin + ' row justify-content-center'}>
+            <div className='col-md-3'>
+              <label>Password</label>
+              <input
+                type='password'
+                name='password'
+                value={this.state.password}
+                onChange={this.handleChange}
+                className="form-control"
+              />
+            </div>
+          </div>
+          <div className={margin + ' row justify-content-center'}>
+            <div className='col-md-3'>
+              <div className={submit}>
+                <input type='submit' />
+              </div>
+            </div>
           </div>
         </form>
       </Animated>

@@ -52,16 +52,36 @@ class SignUp extends Component {
     }
 
     render() {
-        const { submit, form } = styles
+        const { submit, form, margin } = styles
         return (
             <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
-                <form onSubmit={this.props.handleSubmit(this.onSubmit)} className={form}>
-                    <h1>Sign Up</h1>
-                    <Field validate={required} label='Name' type='text' name='name' component={this.renderName} />
-                    <Field validate={[required, email]} label='Email' type='email' name='email' component={this.renderEmail} />
-                    <Field validate={[required, minLength6]} label='Password' type='password' name='password' component={this.renderPassword} />
-                    <div className={submit}>
-                        <input type='submit' />
+                <form onSubmit={this.props.handleSubmit(this.onSubmit)} className={form + ' container'}>
+                    <div className={margin + ' row justify-content-center'}>
+                        <div className='col-sm-6 col-md-3'>
+                            <h1>Sign Up</h1>
+                        </div>
+                    </div>
+                    <div className={margin + ' row justify-content-center'}>
+                        <div className='col-md-3'>
+                            <Field validate={required} label='Name' type='text' name='name' component={this.renderName} />
+                        </div>
+                    </div>
+                    <div className={margin + ' row justify-content-center'}>
+                        <div className='col-md-3'>
+                            <Field validate={[required, email]} label='Email' type='email' name='email' component={this.renderEmail} />
+                        </div>
+                    </div>
+                    <div className={margin + ' row justify-content-center'}>
+                        <div className='col-md-3'>
+                            <Field validate={[required, minLength6]} label='Password' type='password' name='password' component={this.renderPassword} />
+                        </div>
+                    </div>
+                    <div className={margin + ' row justify-content-center'}>
+                        <div className='col-md-3'>
+                            <div className={submit}>
+                                <input type='submit' />
+                            </div>
+                        </div>
                     </div>
                 </form>
             </Animated>
