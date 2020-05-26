@@ -119,7 +119,7 @@ class EditForm extends Component {
                     onChange={this.handleChange}
                     accept={mimeType}
                     onChange={event => this.handleChange(event, input)} />
-                { meta.touched && (meta && meta.invalid && meta.error && (
+                {meta.touched && (meta && meta.invalid && meta.error && (
                     <p className={styles.error}>{meta.error}</p>
                 ))}
             </div>
@@ -148,7 +148,7 @@ class EditForm extends Component {
                     onChange={this.handleChange}
                     accept={mimeType}
                     onChange={event => this.handleChange(event, input)} />
-                { meta.touched && (meta && meta.invalid && meta.error && (
+                {meta.touched && (meta && meta.invalid && meta.error && (
                     <p className={styles.error}>{meta.error}</p>
                 ))}
             </div>
@@ -163,7 +163,7 @@ class EditForm extends Component {
         }
     }
     render() {
-        const { container, btns } = styles;
+        const { container, btns, width } = styles;
         if (!this.props.isAdmin === 1) {
             return (<div className='container'>
                 <div>You are not logged in as admin! Please, <NavLink exact to='/login'>login</NavLink></div>
@@ -198,12 +198,12 @@ class EditForm extends Component {
                             <Field type='text' validate={required} name='quality' label='Quality' component={this.renderField} />
                             <Field type='text' name='weight' validate={required} label='Weight' component={this.renderField} />
                             <div className={btns}>
-                                <button type='submit' className="btn btn-primary" disabled = {this.props.valid ? false : true}>Save</button>
-                                {
-                                    this.props.createdCoin.isFetching ? <div class="spinner-border" role="status">
+                                <button type='submit' className="btn btn-primary" disabled={this.props.valid ? false : true}>Save                                 {
+                                    this.props.createdCoin.isFetching ? <div class='spinner-border' style={{width: '1rem', height: '1rem'}} role="status">
                                         <span class="sr-only">Loading...</span>
                                     </div> : null
                                 }
+                                </button>
                                 <button onClick={() => {
                                     history.push('/admin');
                                 }} className="btn btn-secondary">Cancel</button>

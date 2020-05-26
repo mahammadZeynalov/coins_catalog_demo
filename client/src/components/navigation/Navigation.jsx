@@ -32,12 +32,12 @@ class Navigation extends Component {
                                 {
                                     this.props.user.isAdmin ? <NavLink activeClassName={active} className={link} exact to='/admin'>Admin Panel</NavLink> : null
                                 }
-                                {
+                                {/* {
                                     this.props.user.isAdmin === 0 ? <NavLink activeClassName={active} className={link} exact to='/cart'>Cart</NavLink> : null
                                 }
                                 {
                                     this.props.user.email ? <NavLink className={link} exact to='/posts' onClick={this.logout}>Posts</NavLink> : null
-                                }
+                                } */}
                             </Nav>
                             <Nav>
                                 {
