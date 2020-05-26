@@ -6,7 +6,6 @@ import Homepage from './homepage/Homepage';
 import AdminMain from './adminMain/AdminMain';
 import { getUserInfo } from '../actions'
 import CoinDetailed from './coinDetailed/CoinDetailed';
-import Registration from './registration/Registration';
 import LogIn from './logIn/LogIn';
 import Navigation from './navigation/Navigation';
 import history from './history';
@@ -14,7 +13,7 @@ import EditForm from './adminMain/editForm/EditForm';
 import Wrapper from './adminMain/editForm/Wrapper';
 import Cart from './cart/Cart';
 import SignUp from './registration/SignUp';
-import PostsMain from './posts/PostsMain';
+// import PostsMain from './posts/PostsMain';
 
 class App extends Component {
     componentDidMount() {

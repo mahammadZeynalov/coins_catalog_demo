@@ -24,7 +24,7 @@ class LogIn extends Component {
   render() {
     const { form, submit, margin } = styles
     return (
-      <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+      <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
         <form onSubmit={this.handleSubmit} className={form + ' container'}>
           <div className={margin + ' row justify-content-center'}>
             <div className='col-md-3'>

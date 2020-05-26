@@ -54,7 +54,7 @@ class SignUp extends Component {
     render() {
         const { submit, form, margin } = styles
         return (
-            <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+            <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
                 <form onSubmit={this.props.handleSubmit(this.onSubmit)} className={form + ' container'}>
                     <div className={margin + ' row justify-content-center'}>
                         <div className='col-sm-6 col-md-3'>
