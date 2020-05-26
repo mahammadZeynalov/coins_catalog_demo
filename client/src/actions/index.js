@@ -43,12 +43,14 @@ export const fetchCoinsPropertiesQuality = () => dispatch => {
         })
 }
 
-export const fetchFilteredCoins = (text, state, pageSize, currentPage) => dispatch => {
+export const fetchFilteredCoins = (text, state, type, pageSize, currentPage) => dispatch => {
+    
     fetch(`/coins/filter`, {
         method: 'POST',
         body: JSON.stringify({
             text: text,
             conditions: state,
+            type: type,
             pageSize,
             currentPage
         }),
@@ -106,7 +108,6 @@ export const fetchDeleteCoin = (value) => dispatch => {
         .then(res => res.json())
         .then(data => {
             if (data.message) {
-                console.log('Coin is not deleted. Error')
             } else {
                 dispatch({ type: 'DELETE_COIN', payload: value })
             }
@@ -118,7 +119,6 @@ export const fetchSoloCoin = (id) => dispatch => {
         .then(res => res.json())
         .then(data => {
             if (data.result === 0) {
-                console.log('Coin is not deleted. Error')
             } else {
                 dispatch({ type: 'FETCH_COIN', payload: data })
             }
@@ -341,5 +341,32 @@ export const changeOnPagePosts = (value) => {
     return {
         type: 'CHANGE_POSTS_ON_PAGE',
         payload: value
+    }
+}
+
+export const setCoinMemorial = (value) => {
+    return {
+        type: 'MEMORIAL',
+        payload: value
+    }
+}
+
+export const setCoinExclusive = (value) => {
+    return {
+        type: 'EXCLUSIVE',
+        payload: value
+    }
+}
+
+export const setCoinInvested = (value) => {
+    return {
+        type: 'INVESTED',
+        payload: value
+    }
+}
+
+export const resetCoinType = () => {
+    return {
+        type: 'RESET_COIN_TYPE'
     }
 }

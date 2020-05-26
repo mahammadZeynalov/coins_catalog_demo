@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Filter from '../filter/Filter';
+import { connect } from 'react-redux'
 import { Animated } from "react-animated-css";
+import { setCoinMemorial, setCoinExclusive, setCoinInvested } from '../../actions'
 import Search from '../search/Search';
 import s from './Homepage.module.css';
 import { NavLink } from 'react-router-dom';
@@ -28,7 +30,7 @@ class Homepage extends Component {
                     <div className='col-sm shadow-sm p-3 mb-5 bg-white rounded'>
                         <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
                             <h1>Memorial coins</h1>
-                            <NavLink to='/coins' className={link}>Show all ></NavLink>
+                            <NavLink to='/coins' className={link}><div onClick = {() => {this.props.setCoinMemorial('memorial')}}>Show all ></div></NavLink>
                             <div>
                                 <img className={image_coin} src={M} alt='coint' />
                             </div>
@@ -37,7 +39,7 @@ class Homepage extends Component {
                     <div className='col-sm shadow-sm p-3 mb-5 bg-white rounded'>
                         <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
                             <h1>Exclusive coins</h1>
-                            <NavLink to='/coins' className={link}>Show all ></NavLink>
+                            <NavLink to='/coins' className={link}><div onClick = {() => {this.props.setCoinExclusive('exclusive')}}>Show all ></div></NavLink>
                             <div>
                                 <img className={image_coin} src={E} alt='coint' />
                             </div>
@@ -46,7 +48,7 @@ class Homepage extends Component {
                     <div className='col-sm shadow-sm p-3 mb-5 bg-white rounded'>
                         <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
                             <h1>Invested coins</h1>
-                            <NavLink to='/coins' className={link}>Show all ></NavLink>
+                            <NavLink to='/coins' className={link}><div onClick = {() => {this.props.setCoinInvested('invested')}}>Show all ></div></NavLink>
                             <div>
                                 <img className={image_coin} src={F} alt='coint' />
                             </div>
@@ -58,4 +60,4 @@ class Homepage extends Component {
     }
 }
 
-export default Homepage;
+export default connect(null, { setCoinMemorial, setCoinExclusive, setCoinInvested})(Homepage);

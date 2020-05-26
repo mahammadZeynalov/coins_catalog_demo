@@ -62,7 +62,8 @@ class Coin extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user
+        user: state.user,
+        type: state.coinType
     }
 }
 export default connect(mapStateToProps, { addToCart, fetchDeleteCoin })(Coin);

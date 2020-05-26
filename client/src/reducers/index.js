@@ -176,6 +176,22 @@ const selectOnPagePosts = (state = 3, action) => {
     }
 }
 
+const coinType = (state = '', action) => {
+    switch(action.type) {
+        case 'MEMORIAL':
+            return action.payload
+        case 'EXCLUSIVE':
+            return action.payload;
+        case 'INVESTED':
+            return action.payload
+        case 'RESET_COIN_TYPE':
+            return '';
+        default:
+            return state;
+        
+    }
+}
+
 export default combineReducers({
     coin,
     coins,
@@ -191,5 +207,6 @@ export default combineReducers({
     createdCoin,
     modalCreateEdit,
     buyOrSell,
-    selectOnPagePosts
+    selectOnPagePosts,
+    coinType
 });

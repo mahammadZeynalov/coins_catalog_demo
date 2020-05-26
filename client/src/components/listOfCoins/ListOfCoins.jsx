@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Coins from './coins/Coins';
 import Filter from '../filter/Filter'
-import { getUserCart, changeCoinsOnPage, fetchFilteredCoins, resetCurrentPage } from '../../actions'
+import { getUserCart, changeCoinsOnPage, fetchFilteredCoins, resetCurrentPage, resetCoinType } from '../../actions'
 import { connect } from 'react-redux';
 import s from './ListOfCoins.module.css';
 import Search from '../search/Search';
@@ -11,10 +11,10 @@ class ListOfCoins extends Component {
     handleSelect = (e) => {
         this.props.changeCoinsOnPage(+e.target.value);
         this.props.resetCurrentPage();
-        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, +e.target.value, 1)
+        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, this.props.type, +e.target.value, 1)
     }
     componentDidMount() {
-        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, this.props.pageSize, 1)
+        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, this.props.type, this.props.pageSize, 1)
     }
     render() {
         const type = this.props.match.params.type
@@ -65,10 +65,11 @@ const mapStateToProps = (state) => {
         coins: state.coins.paginated,
         filterParams: state.filterParams,
         searchParams: state.searchParams,
+        type: state.coinType,
         modal: state.filterModalState,
         pageSize: state.pageSize,
         currentPage: state.currentPage
     }
 }
 
-export default connect(mapStateToProps, { getUserCart, changeCoinsOnPage, fetchFilteredCoins, resetCurrentPage })(ListOfCoins);
+export default connect(mapStateToProps, { getUserCart, changeCoinsOnPage, fetchFilteredCoins, resetCurrentPage, resetCoinType })(ListOfCoins);

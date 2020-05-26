@@ -163,7 +163,6 @@ class EditForm extends Component {
         }
     }
     render() {
-        console.log(this.props.valid);
         const { container, btns } = styles;
         if (!this.props.isAdmin === 1) {
             return (<div className='container'>

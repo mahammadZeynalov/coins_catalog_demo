@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toggleFilterModal, fetchFilteredCoins, changeSearchParametrs, resetCurrentPage } from '../../actions'
+import { toggleFilterModal, fetchFilteredCoins, changeSearchParametrs, resetCurrentPage, resetCoinType } from '../../actions'
 import styles from './Search.module.css';
 import history from '../history';
 
@@ -17,11 +17,13 @@ class Search extends Component {
     searchCoins = (value) => {
         history.push('/coins');
         this.props.resetCurrentPage();
-        this.props.fetchFilteredCoins(value, this.props.filterParams, this.props.pageSize, 1);
+        this.props.resetCoinType();
+        this.props.fetchFilteredCoins(value, this.props.filterParams, '', this.props.pageSize, 1);
     }
 
 
     render() {
+        
         const { btn, search, search_block, container, input } = styles
         return (
             <div className = {container}>
@@ -47,8 +49,9 @@ const mapStateToProps = (state) => {
         pageSize: state.pageSize,
         currentPage: state.currentPage,
         filterParams: state.filterParams,
-        searchParams: state.searchParams
+        searchParams: state.searchParams,
+        type: state.coinType
     }
 }
 
-export default connect(mapStateToProps, { toggleFilterModal, changeSearchParametrs, fetchFilteredCoins, resetCurrentPage })(Search)
+export default connect(mapStateToProps, { toggleFilterModal, changeSearchParametrs, fetchFilteredCoins, resetCurrentPage, resetCoinType })(Search)

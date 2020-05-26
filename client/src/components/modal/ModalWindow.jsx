@@ -11,7 +11,6 @@ class ModalWindow extends Component {
     }
 
     render() {
-        console.log(this.props.id);
         const { ghost, modal_window, modal_btn_box } = styles
         return (
             <div className={ghost}>

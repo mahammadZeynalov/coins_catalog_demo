@@ -4,18 +4,18 @@ import { connect } from 'react-redux';
 import styles from './Coins.module.css';
 import { Animated } from "react-animated-css";
 import ReactPagination from '../../pagination/Pagination';
-import { changeCurrentPage, fetchFilteredCoins } from '../../../actions';
+import { changeCurrentPage, fetchFilteredCoins, resetCoinType } from '../../../actions';
 
 class Coins extends Component {
 
     componentDidMount() {
         this.props.changeCurrentPage(1);
-        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, this.props.onPage, 1);
+        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, this.props.type, this.props.onPage, 1);
     }
 
     changeCurrentPage = numPage => {
         this.props.changeCurrentPage(numPage);
-        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, this.props.onPage, numPage);
+        this.props.fetchFilteredCoins(this.props.searchParams, this.props.filterParams, this.props.type, this.props.onPage, numPage);
     };
 
     render() {
@@ -49,8 +49,9 @@ const mapStateToProps = (state) => {
         onPage: state.pageSize,
         currentPage: state.currentPage,
         filterParams: state.filterParams,
-        searchParams: state.searchParams
+        searchParams: state.searchParams,
+        type: state.coinType
     }
 }
 
-export default connect(mapStateToProps, { changeCurrentPage, fetchFilteredCoins })(Coins)
+export default connect(mapStateToProps, { changeCurrentPage, fetchFilteredCoins, resetCoinType })(Coins)

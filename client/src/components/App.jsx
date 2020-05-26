@@ -28,7 +28,7 @@ class App extends Component {
                 <Route exact path='/coins' component={ListOfCoins} />
                 <Route exact path='/coins/coin/:id' render={(props) => <CoinDetailed {...props} />} />
                 <Route exact path='/registration' component={SignUp} />
-                <Route exact path='/posts' component={PostsMain} />
+                {/* <Route exact path='/posts' component={PostsMain} /> */}
                 <Route exact path='/cart' component={Cart} />
                 <Route exact path='/login' component={LogIn} />
                 <Route exact path='/admin' component={AdminMain} />
