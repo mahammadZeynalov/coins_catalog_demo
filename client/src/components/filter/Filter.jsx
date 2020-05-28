@@ -54,17 +54,15 @@ class Filter extends Component {
 
 
     render() {
-        const { label, input, metal, quality, country, number, number_parent, container, absolute, block } = styles
-        const class_block = block + ' container'
+        const { label, input, metal, quality, country, number, number_parent, container } = styles
 
         if (this.props.modal && this.props.coinsProperties.country
             && this.props.coinsProperties.metal
             && this.props.coinsProperties.quality) {
             return (
                 <Animated className = {container} animationIn="bounceInUp" animationOut="fadeIn" isVisible={true} animationInDuration={500}>
-                    <div className={class_block} >
                         <div className='row'>
-                            <div className='col-sm-5'>
+                            <div className='col-sm-12 col-md-6'>
                                 <div className={country}>
                                     <label className = {label}>
                                         Issuing country
@@ -77,7 +75,7 @@ class Filter extends Component {
                                     </select>
                                 </div>
                             </div>
-                            <div className='col-sm-7'>
+                            <div className='col-sm-12 col-md-6'>
                                 <div >
                                     <label className = {label}>Price</label>
                                     <div className = {number_parent}>
@@ -94,8 +92,8 @@ class Filter extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='row'>
-                            <div className='col-sm-5'>
+                        <div className='row'> 
+                            <div className='col-sm-12 col-md-6'>
                                 <div className={metal}>
                                     <label className = {label}>
                                         Metal
@@ -108,7 +106,7 @@ class Filter extends Component {
                                     </select>
                                 </div>
                             </div>
-                            <div className='col-sm-7'>
+                            <div className='col-sm-12 col-md-6'>
                                 <div >
                                     <label className = {label}>Year of issue</label>
                                     <div className = {number_parent}>
@@ -125,7 +123,7 @@ class Filter extends Component {
                             </div>
                         </div>
                         <div className='row'>
-                            <div className='col-sm-5'>
+                            <div className='col-sm-12 col-md-6'>
                                 <div className={quality}>
                                     <label className = {label}>
                                         Quality of the coin
@@ -138,10 +136,9 @@ class Filter extends Component {
                                     </select>
                                 </div>
                             </div>
-                            <div className='col-sm-7'>
+                            <div className='col-sm-12 col-md-6'>
                             </div>
                         </div>
-                    </div>
                 </Animated>
             )
         } else {
