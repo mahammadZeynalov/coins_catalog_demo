@@ -22,13 +22,17 @@ class Coins extends Component {
         const { alert, coins } = styles
         return (
             <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-                <div className={coins}>
-                    {
-                        this.props.coins ?
-                            this.props.coins.map(coin =>
-                                <Coin key={coin.id} {...coin} />
-                            ) : <div className={alert}>There is no coins found by given parameters</div>
-                    }
+                <div>
+                    <div className='row'>
+                        {
+                            this.props.coins ?
+                                this.props.coins.map(coin =>
+                                    <div className='col-12 col-md-6 col-xl-4'>
+                                        <Coin key={coin.id} {...coin} />
+                                    </div>
+                                ) : <div className={alert}>There is no coins found by given parameters</div>
+                        }
+                    </div>
                 </div>
                 <div>
                     <ReactPagination
