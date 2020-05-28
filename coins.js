@@ -2,20 +2,6 @@ const router = require("express").Router();
 const pool = require('./database');
 require('dotenv').config();
 
-// router.get('/', (req, res) => {
-//     const sql = `SELECT * FROM coins`
-//     pool.query(sql, (err, data) => {
-//         if (!err) {
-//             res.json(data);
-//         } else {
-//             res.status(400).json({
-//                 result: 0,
-//                 message: 'Can not get all coins'
-//             })
-//         }
-//     })
-// });
-
 router.post('/filter', (req, res) => {
     if (req.body.type !== '') {
         let sql = `SELECT * FROM coins WHERE coin_type = '${req.body.type}'`
