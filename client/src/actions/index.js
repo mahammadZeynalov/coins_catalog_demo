@@ -126,7 +126,7 @@ export const fetchSoloCoin = (id) => dispatch => {
 }
 
 export const createNewUser = (values) => dispatch => {
-    fetch(`/register`, {
+    fetch(`/user/register`, {
         method: 'POST',
         body: JSON.stringify({
             name: values.name,
@@ -148,7 +148,7 @@ export const createNewUser = (values) => dispatch => {
 }
 
 export const userLogin = values => dispatch => {
-    fetch(`/login`, {
+    fetch(`/user/login`, {
         method: 'POST',
         body: JSON.stringify({
             email: values.email,
@@ -294,7 +294,6 @@ export const finishFetchCreateCoin = data => ({
 });
 
 export const createCoin = values => async dispatch => {
-    
     dispatch(startFetchCreateCoin());
     try {
         let formData = new FormData();

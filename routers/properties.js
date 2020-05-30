@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const pool = require('./database');
+const pool = require('../database');
 
 router.get('/country', (req, res) => {
     const sql = `SELECT DISTINCT country FROM coins`;

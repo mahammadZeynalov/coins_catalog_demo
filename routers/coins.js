@@ -1,6 +1,91 @@
 const router = require("express").Router();
-const pool = require('./database');
+const pool = require('../database');
+const multer = require('multer');
+const path = require('path');
 require('dotenv').config();
+
+const storage = multer.diskStorage({
+    destination: './upload/images',
+    filename: (req, file, cb) => {
+        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    }
+})
+
+const upload = multer({
+    storage: storage
+});
+
+const cpUpload = upload.fields([{ name: 'image_averse' }, { name: 'image_reverse' }])
+
+router.post('/', cpUpload, (req, res) => {
+    const sql = `INSERT INTO coins(name, face_value, issue_year,
+                                    price, country, metal, short_description,
+                                    full_description, quality, weight, coin_type, image_averse, image_reverse)
+                                    VALUES(?, ? ,? , ?, ?, ? ,? , ?, ?, ? , ?, ?, ?)`
+    const data = req.body
+    pool.query(sql,
+        [data.name,
+        data.face_value,
+        data.issue_year,
+        data.price,
+        data.country,
+        data.metal,
+        data.short_description,
+        data.full_description,
+        data.quality,
+        data.weight,
+        data.coin_type,
+        req.files['image_averse'][0].filename,
+        req.files['image_reverse'][0].filename],
+        (err, data) => {
+            if (!err) {
+                res.json(data);
+                console.log('Coin added to database')
+            } else {
+                res.status(400).json({
+                    result: 0,
+                    message: 'Impossible to upload the coin'
+                })
+                console.log(err);
+            }
+        })
+})
+
+router.put('/:id', cpUpload, (req, res) => {
+    const data = req.body;
+    const idOfCoin = req.params.id
+    const sql = `UPDATE coins SET name = ?, face_value = ?, issue_year = ?,
+                    price = ?, country = ?, metal = ?, short_description = ?,
+                    full_description = ?, quality = ?, weight = ?, coin_type = ?, image_averse = ?, image_reverse = ?
+                    WHERE id = ${idOfCoin}`
+
+    pool.query(sql,
+        [
+            data.name,
+            data.face_value,
+            data.issue_year,
+            data.price,
+            data.country,
+            data.metal,
+            data.short_description,
+            data.full_description,
+            data.quality,
+            data.weight,
+            data.coin_type,
+            req.files['image_averse'][0].filename,
+            req.files['image_reverse'][0].filename], (err, data) => {
+                if (!err) {
+                    res.json(req.body);
+                    console.log('Coin has been updated');
+                } else {
+                    res.status(400).json({
+                        result: 0,
+                        message: 'Impossible to change the coin'
+                    });
+                    console.log(err);
+                }
+            })
+});
 
 router.post('/filter', (req, res) => {
     if (req.body.type !== '') {
